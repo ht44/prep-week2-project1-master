@@ -218,23 +218,23 @@ document.getElementById("nameLengthBtn").addEventListener("click", function () {
 //    You can get fancy by adding CSS styles to each of these displays to change the color, too - Green=Good, Orange=OK, Red=Bad
 document.getElementById("testScoreBtn").addEventListener("click", function() {
   var testScoreNum = document.getElementById("testScoreData").value;
-  if (testScoreNum > 90) {
+  if (testScoreNum >= 90) {
     document.getElementById("qe").classList.remove("niceClass");
     document.getElementById("qe").classList.remove("badClass");
     document.getElementById("qe").classList.add("greatClass");
     document.getElementById("qe").innerHTML = "Great job!";
-  } else if (testScoreNum > 60 && testScoreNum < 89) {
+  } else if (testScoreNum >= 60) {
     document.getElementById("qe").classList.remove("greatClass");
     document.getElementById("qe").classList.remove("badClass");
     document.getElementById("qe").classList.add("niceClass");
     document.getElementById("qe").innerHTML = "Nice work, keep practicing.";
-  } else if (testScoreNum < 59) {
+  } else if (testScoreNum >= 0) {
     document.getElementById("qe").classList.remove("greatClass");
     document.getElementById("qe").classList.remove("niceClass");
     document.getElementById("qe").classList.add("badClass");
     document.getElementById("qe").innerHTML = "Very bad: study more and retake the test.";
   } else {
-    document.getElementById("qe").innerHMTL = "Undefined";
+    document.getElementById("qe").innerHTML = "Undefined";
   }
 });
 
